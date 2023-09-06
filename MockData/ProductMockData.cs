@@ -54,7 +54,7 @@ namespace ECartTest.MockData
         {
             return new ECartProduct
             {
-                Id = 1,
+                Id = 2,
                 CategoryId = 1,
                 Title = "Twin Cute Bunny Set Combo",
                 Description = "Pellentesque nisl ac dictum tincidunt ut viverra non, sem in sed phasellus tempor.",
@@ -74,8 +74,8 @@ namespace ECartTest.MockData
                 CategoryName = "dress",
                 Title = "White Comfort Maxx",
                 Description = "Pellentesque nisl ac dictum tincidunt ut viverra non, sem in sed phasellus tempor.",
-                Price = 550,
-                Image = mockImage.Object
+                Price = 560,
+                Image = null
             };
         }
 
@@ -84,11 +84,16 @@ namespace ECartTest.MockData
             return new ECartProduct
             {
                 Id = 3,
-                CategoryId = 1,
+                CategoryId = 2,
                 Title = "White Comfort Maxx",
                 Description = "Pellentesque nisl ac dictum tincidunt ut viverra non, sem in sed phasellus tempor.",
-                Price = 550,
-                Image = "e42a6a74-024c-4efd-b67c-4bc0c5893340.jpg"
+                Price = 500,
+                Image = "e42a6a74-024c-4efd-b67c-4bc0c5893340.jpg",
+                Category = new Category
+                {
+                    CategoryId = 2,
+                    CategoryName = "toys"
+                }
             };
         }
 
@@ -99,7 +104,7 @@ namespace ECartTest.MockData
         public static UpdateProductDTO UpdateProduct()
         {
             var mockImage = new Mock<IFormFile>();
-            mockImage.Setup(x => x.FileName).Returns("3a3a0a02-05bd-4679-8f25-cbee87b88e8a.jpg");
+            mockImage.Setup(x => x.FileName).Returns("e42a6a74-024c-4efd-b67c-4bc0c5893340.jpg");
             mockImage.Setup(x => x.Length).Returns(1024);
 
             return new UpdateProductDTO { 
